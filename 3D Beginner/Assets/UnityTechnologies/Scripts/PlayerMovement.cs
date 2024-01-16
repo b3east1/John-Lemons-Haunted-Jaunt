@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 m_Movement;
     private Animator m_Animator;
     private Rigidbody m_Rigidbody;
-    Quaternion m_Rotation = Quaternion.Identity;
+    Quaternion m_Rotation = Quaternion.identity;
+
+    Vector3 test;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Fixed()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -34,13 +34,13 @@ public class PlayerMovement : MonoBehaviour
         m_Animator.SetBool ("IsWalking", isWalking);
 
         Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnspeed * Time.deltaTime, 0f);
-        m_Rotation = Quaternion.LookRotation
+        m_Rotation = Quaternion.LookRotation (desiredForward);
 
     }
     
     void OnAnimatorMove () 
     {
-      m_Rigidbody
-
+      m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+      m_Rigidbody.MoveRotation (m_Rotation);
     }
 }
