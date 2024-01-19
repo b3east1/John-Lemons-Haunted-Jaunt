@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody m_Rigidbody;
     Quaternion m_Rotation = Quaternion.identity;
 
-    Vector3 test;
 
     // Start is called before the first frame update
     void Start()
