@@ -8,7 +8,9 @@ public class GameEnding : MonoBehaviour
     public float displayImageDuration = 1f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
+    public CanvasGroup caughtBackgroundImageCanvasGroup;
     bool m_IsPlayerAtExit;
+    bool m_IsPlayerCaught;
     float m_Timer;
 
     // Start is called before the first frame update
@@ -22,7 +24,11 @@ public class GameEnding : MonoBehaviour
     {
         if(m_IsPlayerAtExit)
         {
-            EndLevel();
+            EndLevel(exitBackgroundImageCanvasGroup);
+        }
+        else if (m_IsPlayerCaught) 
+        {
+            EndLevel (caughtBackgroundImageCanvasGroup);
         }
     }
 
@@ -36,10 +42,10 @@ public class GameEnding : MonoBehaviour
         
     }
 
-    void EndLevel() 
+    void EndLevel (CanvasGroup imageCanvasGroup) 
         {
             m_Timer += Time.deltaTime;
-            exitBackgroundImageCanvasGroup.alpha = m_Timer / fadeDuration;
+            imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
             if(m_Timer > fadeDuration + displayImageDuration)
         {
@@ -47,3 +53,4 @@ public class GameEnding : MonoBehaviour
         }
         }
 }
+    
