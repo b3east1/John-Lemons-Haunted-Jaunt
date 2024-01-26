@@ -27,7 +27,7 @@ PrefabInstance:
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
@@ -37,12 +37,12 @@ PrefabInstance:
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9848078
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17364816
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
@@ -57,7 +57,7 @@ PrefabInstance:
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
         type: 3}
@@ -69,11 +69,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1611919139412917226, guid: e8b99c4231d784fe29ab0308b44500c5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6927287999337505984, guid: e8b99c4231d784fe29ab0308b44500c5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 383873397623424571}
   m_SourcePrefab: {fileID: 100100000, guid: e8b99c4231d784fe29ab0308b44500c5, type: 3}
+--- !u!1 &2485013069543474953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6927287999337505984, guid: e8b99c4231d784fe29ab0308b44500c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4782296704344990665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &383873397623424571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485013069543474953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0c6aaa31d6640a2a6e6a2acd639f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 595165001860414431, guid: 90d2c74df4cc7474f95a83802fd9db8a, type: 3}
+  gameEnding: {fileID: 0}
 --- !u!4 &4036086534110725627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8817255126103844402, guid: e8b99c4231d784fe29ab0308b44500c5,
@@ -159,7 +184,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100006, guid: 563ac48ff656d49478fd93213f4c0eb8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1860609752034459640}
+      addedObject: {fileID: 8385369551439704067}
   m_SourcePrefab: {fileID: 100100000, guid: 563ac48ff656d49478fd93213f4c0eb8, type: 3}
 --- !u!4 &7994986075195503825 stripped
 Transform:
@@ -192,10 +217,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.25
+  m_Height: 1.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!54 &6461195630095978946
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -219,7 +244,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -245,7 +270,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1860609752034459640
+--- !u!114 &8385369551439704067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,5 +282,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a6994a9ef694dd5b60e98f2b2cb428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 4899366696665460329}
   waypoints: []

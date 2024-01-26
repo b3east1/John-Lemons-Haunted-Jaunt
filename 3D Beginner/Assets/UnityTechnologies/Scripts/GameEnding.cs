@@ -49,7 +49,7 @@ public class GameEnding : MonoBehaviour
     }
 
     void EndLevel (CanvasGroup imageCanvasGroup, bool doRestart) 
-        {
+    {
             m_Timer += Time.deltaTime;
             imageCanvasGroup.alpha = m_Timer / fadeDuration;
             
@@ -65,4 +65,5 @@ public class GameEnding : MonoBehaviour
             } 
             
         }
+    }
 }
